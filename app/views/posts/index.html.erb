@@ -86,15 +86,17 @@
   <%= link_to image_tag('/assets/camera.jpeg', class: "icon"), new_post_path%>
 <% end %>
 <% @posts.each do |post| %>
-  <div class="card ">
-    <%= image_tag post.image.url, class: 'card-image' %>
-    <div class="card-content">
-      <p class="content-title"><%= post.title%></p>
-      <p><%= post.locate%></p>
-      <p><%= post.content%></p>
-      <%# <%= post.image%> 
+  <%= link_to(post_path(post.id)) do %>
+    <div class="card ">
+      <%= image_tag post.image.url, class: 'card-image' %>
+      <div class="card-content">
+        <p class="content-title"><%= post.title%></p>
+        <p><%= post.locate%></p>
+        <p><%= post.content%></p>
+        <%# <%= post.image%> 
+      </div>
     </div>
-  </div>
+  <% end %>
 <% end %>
     <%# <%= @post.image%>
 <%# <div class="card" style="width: 18rem;">

@@ -12,6 +12,9 @@ class PostsController < ApplicationController
     @post.save
   end
 
+  def show
+    @post = Post.new(post_params)
+  end
   private
   def post_params
     params.permit(:name, :title, :image, :locate, :url, :content)
