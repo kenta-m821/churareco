@@ -13,8 +13,9 @@ class PostsController < ApplicationController
   end
 
   def show
-    @post = Post.new(post_params)
+    @post = Post.find(params[:id])
   end
+
   private
   def post_params
     params.permit(:name, :title, :image, :locate, :url, :content)

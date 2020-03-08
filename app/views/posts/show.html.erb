@@ -1,1 +1,9 @@
-成功！
+<%= render 'layouts/header'%>
+<div class="main">
+  <p>user-name</p>
+  <%= image_tag @post.image.url, class: "main-image" %>
+  <%= @post.title%><br>
+  <%= @post.locate%><br>
+  <%= @post.content%><br>
+  <%= link_to '外部ページへ移動', @post.url %>
+</div>
